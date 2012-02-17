@@ -1,25 +1,5 @@
+
+Building my own trace listener based on:
 http://www.codeproject.com/Articles/2680/Writing-custom-NET-trace-listeners
 
-This article provides a brief introduction to .NET trace facilities and then discusses different methods to customize .NET trace listeners, based on overriding TraceListener, StreamWriter or Stream. As an illustration we'll build a listener that adds timestamp to trace messages and stores them in a text file that never exceeds given size. Once the maximum size is reached, the trace file is backed up and then truncated. This functionality is used in a real project that requires continuous generation of trace files.
-1. Trace and trace listeners
-
-One of the most useful debugging features of .NET Framework is Trace type (or class in C++). Functionally Trace is very similar to Debug type (and they share most of internal implementation), but unlike its Debug sibling that is supposed to be used only during debugging sessions, Trace functions can be compiled into a program and shipped to customers, so in case your users encounter a problem, they can activate trace by simply editing application configuration file.
-
-Trace is easy to use and fully documented in .NET Framework documentation, so I will only briefly go through the basic trace features. The following code is a self-explanatory example of how to use Trace<code> type:
-Collapse | Copy Code
-
-Trace.Assert(true, "Assertion that should not appear");
-Trace.Assert(false, "Assertion that should appear ");
-Trace.WriteLine(123, "Category 1");
-Trace.WriteLineIf(true, 456, "Category 2");
-Trace.WriteLineIf(false, 789, "Category 3 (should not appear)");
-
-The real power of Trace and Debug types is in so called trace listeners - trace information subscribers. You can define unlimited number of listeners, and as soon as you add them to trace listener collection, they will start receiving trace messages. .NET Framework comes with three ready-made listeners: DefaultTraceListener, EventLogTraceListener and TextWriterTraceListener (all in System.Diagnostics namespace). DefaultTraceListener wraps traditional OutputDebugString API, EventLogTraceListener logs messages to Windows Event Log, and TextWriterTraceListener forwards them to a text file. The code below demonstrates how to forward trace messages to a text file (in addition to output debug window).
-Collapse | Copy Code
-
-TextWriterTraceListener listener = new TextWriterTraceListener("MyTrace.txt");
-Trace.AutoFlush = true;
-Trace.Listeners.Add(listener);
-Trace.WriteLine(123, "Category 1");
-
-Defining trace output path in your source code is pretty bad idea and serves only demonstration purposes. Trace listener parameters can (and should) be specified in application configuration file.
+Here is where I will put some useful stuff later.
