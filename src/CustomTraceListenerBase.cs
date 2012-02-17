@@ -18,7 +18,7 @@ namespace Dacke.TraceListeners
         /// <param name="message">A message to write. </param>
         public override void Write(string message)
         {
-            Write((object)message);
+            base.Write(message);
         }
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace Dacke.TraceListeners
         /// </code>
         /// </example>
         /// <param name="ex">The exeception object that you want to output.</param>
-        public void Write(Exception ex)
+        public virtual void Write(Exception ex)
         {
-            Write((object)String.Format("Source: {0}, Message: {1}", ex.Source, ex.Message));
+            this.Write(String.Format("Source: {0}, Message: {1}", ex.Source, ex.Message));
         }
         
         /// <summary>
@@ -60,9 +60,9 @@ namespace Dacke.TraceListeners
         /// </summary>
         /// <param name="ex"></param>
         /// <param name="category"></param>
-        public void Write(Exception ex, string category)
+        public virtual void Write(Exception ex, string category)
         {
-            base.Write(ex, category);
+            base.Write(String.Format("Source: {0}, Message: {1}", ex.Source, ex.Message), category);
         }
 
         /// <summary>
@@ -92,9 +92,9 @@ namespace Dacke.TraceListeners
         /// 
         /// </summary>
         /// <param name="ex"></param>
-        public void WriteLine(Exception ex)
+        public virtual void WriteLine(Exception ex)
         {
-            base.WriteLine(ex.Message);
+            this.WriteLine(String.Format("Source: {0}, Message: {1}", ex.Source, ex.Message));
         }
 
         /// <summary>
@@ -121,9 +121,9 @@ namespace Dacke.TraceListeners
         /// </summary>
         /// <param name="ex"></param>
         /// <param name="category"></param>
-        public void WriteLine(Exception ex, string category)
+        public virtual void WriteLine(Exception ex, string category)
         {
-            base.WriteLine(ex, category);
+            this.WriteLine(String.Format("Source: {0}, Message: {1}", ex.Source, ex.Message), category);
         }
 
         /// <summary>
