@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Diagnostics;
 
@@ -85,7 +86,7 @@ namespace Dacke.TraceListeners
         /// <param name="message"></param>
         public override void WriteLine(string message)
         {
-            base.WriteLine(message);
+            base.WriteLine(GenerateFormattedOutput(message));
         }
 
         /// <summary>
@@ -138,8 +139,37 @@ namespace Dacke.TraceListeners
 
         #endregion
 
-        #region Private Methods
+        #region Protected Methods
 
+        //  TODO: Modify this so that any derived class can override this behavior.
+        protected virtual string GenerateFormattedOutput(object o)
+        {
+            return String.Format("{0} {1} Method: {2}, {3}",
+                                 DateTime.Now.ToShortDateString(),
+                                 DateTime.Now.ToShortTimeString(),
+                                 GetCallingMethodName(),
+                                 o.ToString()
+                );
+        }
+
+        protected virtual string GetCallingMethodName()
+        {
+            var callingMethod = MethodBase.GetCurrentMethod().Name;
+
+            var stackFrames = new StackTrace().GetFrames();
+            foreach (var stackFrame in stackFrames)
+            {
+                var currentMethodFrame = stackFrame.GetMethod();
+                if (currentMethodFrame.Module.Assembly.GetName().Name != Assembly.GetExecutingAssembly().GetName().Name)
+                {
+                    callingMethod = currentMethodFrame.Name;
+                    break;
+                }
+                
+            }
+
+            return callingMethod;
+        }
 
         #endregion
     }
