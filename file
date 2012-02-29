@@ -1,0 +1,73 @@
+Removed the older testing framework and added a new private method.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: unknown <Dacke@.(none)>
+#
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   UnitTests/UnitTests.csproj
+#	modified:   UnitTests/packages.config
+#	modified:   src/CustomTraceListenerBase.cs
+#	modified:   src/Dacke.Trace.csproj
+#	modified:   src/Dacke.Trace.suo
+#	deleted:    src/packages/NUnit.2.5.10.11092/Logo.ico
+#	deleted:    src/packages/NUnit.2.5.10.11092/NUnit.2.5.10.11092.nupkg
+#	deleted:    src/packages/NUnit.2.5.10.11092/NUnitFitTests.html
+#	deleted:    src/packages/NUnit.2.5.10.11092/fit-license.txt
+#	deleted:    src/packages/NUnit.2.5.10.11092/lib/nunit.framework.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/lib/nunit.mocks.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/lib/pnunit.framework.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/NUnitTests.VisualState.xml
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/NUnitTests.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/NUnitTests.nunit
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/TestResult.xml
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/agent.conf
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/agent.log.conf
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/launcher.log.conf
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/Failure.png
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/Ignored.png
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/Inconclusive.png
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/Skipped.png
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/Success.png
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/fit.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/log4net.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit-console-runner.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit-gui-runner.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.core.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.core.interfaces.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.fixtures.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.uiexception.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.uikit.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/lib/nunit.util.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-agent-x86.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-agent-x86.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-agent.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-agent.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-console-x86.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-console-x86.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-console.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-console.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-x86.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit-x86.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/nunit.framework.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit-agent.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit-agent.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit-launcher.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit-launcher.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit.framework.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/pnunit.tests.dll
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/runFile.exe
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/runFile.exe.config
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/runpnunit.bat
+#	deleted:    src/packages/NUnit.2.5.10.11092/tools/test.conf
+#	new file:   src/packages/NUnit.2.6.0.12054/NUnit.2.6.0.12054.nupkg
+#	new file:   src/packages/NUnit.2.6.0.12054/lib/nunit.framework.dll
+#	renamed:    src/packages/NUnit.2.5.10.11092/lib/nunit.framework.xml -> src/packages/NUnit.2.6.0.12054/lib/nunit.framework.xml
+#	renamed:    src/packages/NUnit.2.5.10.11092/license.txt -> src/packages/NUnit.2.6.0.12054/license.txt
+#
