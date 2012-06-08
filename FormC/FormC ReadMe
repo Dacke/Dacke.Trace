@@ -1,0 +1,21 @@
+Dacke.Trace
+
+Introduction
+-------------------------------------------------------------------------
+A custom trace listener project that will provide flexibility in the information that you can output from a project at runtime.
+
+Why
+-------------------------------------------------------------------------
+Why bother writing a custom trace listener when you can use the ones that came with the Microsoft .NET CLR?
+
+Good question!  I started writing this because I wanted to customize the output of the information that was coming out of the default trace listener.
+I then expanded on it so that I could have more flexibility over what I output and when I output it.
+
+References
+-------------------------------------------------------------------------
+When I started this project, I based my information on the following code project article (Writing custom .NET trace listeners).
+	http://www.codeproject.com/Articles/2680/Writing-custom-NET-trace-listeners
+
+Thank you Vagif Abilov for getting me started.
+
+
