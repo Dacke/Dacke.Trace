@@ -39,11 +39,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomTraceListener.cs" />
+    <Compile Include="FileTraceListener.cs" />
+    <Compile Include="DefaultTraceListener.cs" />
     <Compile Include="CustomTraceListenerBase.cs" />
     <Compile Include="ICustomTraceListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
